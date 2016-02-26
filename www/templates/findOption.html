@@ -1,0 +1,75 @@
+<ion-view title="Find" align="center">
+	<ion-content>		
+		<style type="text/css">
+		#block{
+		  width: 85%;
+		  height: 30%;
+		  margin-left: 6%;
+		  margin-right: 2%;
+		  padding: 2%;
+		  border-radius: 15px 50px 30px;
+		  border: 1px solid #8a6de9;  
+		  float: left;
+		  margin-bottom: 8%;
+		}
+		#chk{
+		  float: left;
+		}
+		</style>   
+
+		<form id="findform" name="ddname" ng-submit="findInternss(frm)">
+        	<div id="full" style="border:2px;">
+	            <center><h3 style="margin-top:20px;">Find Internship</h3></center>
+	            <p style="margin-top:3%;margin-left:5%;">Select</p>
+	            <div id="selectdiv" class="form-group">
+		            <!--<label id="labeldiv">Select City</label>
+		            <select class="form-control select2" style="width: 100%;"  ng-model="frm.CityName">
+		                <option  ng-repeat="x in city|orderBy:'CityName'" value="{{ x.CityName }}">
+		                          {{ x.CityName }}
+		                </option>
+		            </select>-->
+		            <label class="item item-input item-select">
+				    <div class="input-label">
+				      City
+				    </div>
+				    <select  style="width: 100%;"  ng-model="frm.CityName">
+						<option  ng-repeat="x in city|orderBy:'CityName'" value="{{ x.CityName }}">
+		                          {{ x.CityName }}
+		                </option>
+				    </select>
+				  </label>
+	            </div>
+	            <p style="margin-top:2%;margin-left:5%;">&</p>
+	            <div id="selectdiv" class="form-group">
+	                <!-- <label id="labeldiv">Select Functional Area</label>
+	                <select class="form-control select2" style="width: 100%;"  ng-model="frm.FunctionalArea">
+	                    <option value="{{ x.FunctionalArea }}"  ng-repeat="x in functionalarea|orderBy:'FunctionalArea'">{{ x.FunctionalArea }}</option>
+	                </select> -->
+		            <label class="item item-input item-select">
+				    <div class="input-label">
+				      Functional Area
+				    </div>
+				    <select  style="width: 100%;"  ng-model="frm.FunctionalArea">
+						<option value="{{ x.FunctionalArea }}"  ng-repeat="x in functionalarea|orderBy:'FunctionalArea'">{{ x.FunctionalArea }}</option>
+				    </select>
+				  </label>	                
+	            </div>
+            </div>
+                
+      		<div id="rowdiv">  
+        		<label id="labeldiv" style="margin-left:6%;">Category you have</label>
+				<div id="" style="width:100%;overflow-y:scroll; overflow-x:hidden; height:260px; margin-left:4%;">
+  					<div id="block" ng-repeat="x in category|orderBy:'Category_Name'" ng-click="checkbx(id)">
+    					<!--<input type="checkbox" id="{{x.Category_Name}}" ng-model="x.value">
+    					{{ x.Category_Name }}<br>-->
+    					<ion-checkbox  id="{{x.Category_Name}}" ng-model="x.value" style="border:none"  on-double-tap="onPop({{x.Category_Name}})">
+    					{{ x.Category_Name }}</ion-checkbox><br>
+  					</div>
+				</div>
+				<!--<button type="submit" class="btn bg-maroon margin">Find Internships</button> ui-sref="internshiplist" -->
+				<center><button type="submit" ng-click="findInternss()" class="button button-small" id="defaultColor" style="bottom:0;margin-top:5%;padding-left:10%;padding-right:10%; color: #fff;">Find Internships</button></center>
+        	</div>  
+        </form>    
+			
+	</ion-content>
+</ion-view>

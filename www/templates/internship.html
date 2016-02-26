@@ -1,0 +1,49 @@
+<ion-view title="Find Internships" align="center">
+  <ion-content>
+      
+    <div class="card">
+      <div class="item item-text-wrap" >
+          <h2 align="center">Internship Details</h2>
+        </div>      
+    </div>
+
+    <div class="card">
+        <div class="item item-text-wrap">         
+          <div class="internship-content">
+            <div class="row">
+              <div class="col" id="internship-title">{{InternshipData.InternshipTitle}}</div>           
+          </div>
+          <div class="row">
+              <div class="col col-75">{{InternshipData.CompanyName}}</div>
+              <div class="col">{{InternshipData.CityID}}</div>
+          </div>
+          <div class="row">
+              <div class="col col-75">Posted Date : {{InternshipData.PostedDate}}</div>         
+          </div>
+          <div class="row">
+              <div class="col col-75">Internship Date : {{InternshipData.StartDate}}</div>         
+          </div>
+          <hr size="2"></hr>
+          <div class="row">
+              <div class="col" id="internship-title">Intership Description</div>            
+          </div>
+          <div class="row">
+             <div class="col">{{InternshipData.ShortDesc}}</div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col" id="internship-title">Company Description</div>            
+          </div>
+          <div class="row">
+             <div class="col">{{InternshipData.CompanyDesc}}</div>
+          </div>
+          </div>
+        </div>
+
+    </div>      
+    <center>
+      <button type="button" ng-click="showspin();openModal()" style="padding-left:10%;padding-right:10%; color: #fff;" class="button button-large" id="defaultColor">Map View</button><br><br>
+      <ion-spinner icon="ripple" id="spin" style="width:20%;height:20%;display:none"></ion-spinner>
+      </center>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view title="Find" align="center">
+    <ion-content>		
+		<div class="card">
+			<div class="item item-button-right">
+    			Internship Found : {{Internships}}
+    			<button class="button button-light">
+      				<i class="icon ion-funnel"></i>
+    			</button>
+  			</div>
+			
+		</div>
+
+
+		<hr size="2"></hr>
+		<div class="card">
+			<div class="item item-text-wrap">
+    			Mumbai | IT and Computers | All Category
+  		    </div>
+		</div>
+
+            <div class="card" ng-repeat="internshiplist in InternshipList">
+                <div class="item item-text-wrap">         
+                  <div class="internship-content">
+                  <div class="row">
+                    <div class="col" id="internship-title">{{internshiplist.InternshipTitle}}</div>           
+                </div>
+                <div class="row">
+                    <div class="col col-75">{{internshiplist.CompanyName}}</div>
+                    <div class="col">{{internshiplist.CityID}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-75">Posted Date : {{internshiplist.PostedDate}}</div>         
+                </div>
+                <div class="row">
+                    <div class="col col-75">Internship Date : {{internshiplist.StartDate}}</div>         
+                </div>
+                <center>
+                <a href="#/findinternship/{{internshiplist.InternshipID}}" class="button button-small" style="padding-left:15%;padding-right:15%; color: #fff;" id="defaultColor">
+                    View Internship
+                </a>
+                </center>
+                <!--<a href="#/home" class="button button-small button-block button-light" id="view-btn">
+                    Home
+                </a>-->
+                </div>
+                </div>
+
+            </div>
+    </ion-content>
+</ion-view>

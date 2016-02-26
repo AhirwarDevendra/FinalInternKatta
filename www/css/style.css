@@ -1,1 +1,90 @@
+.bar-header
+{
+	background-color: #8a6de9;
+	box-shadow: 0px 2px 2px grey;
+}
+#defaultColor{
+background-color: #8a6de9;	
+}
+ion-header-bar h1,button,i 
+{
+	color: #fff;
+}
+
+.internship-content
+{
+	font-size: 13px;
+}
+
+#internship-title
+{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#view-btn
+{
+	background-color: #8a6de9;
+	color: #fff;
+}
 /* Empty. Add your own CSS if you like */
+#splashimg{
+	margin-top:30%;
+}
+.classsplashimg{
+	margin-top: 20%;
+}
+.delete{
+	color:red;
+	text-decoration: none;
+	float:right;
+}
+#ichome{
+	text-align: center;
+}
+#ease{
+	margin-top: 30px;
+}
+#offer{
+	margin-top: 60px;
+}
+div #linkwithimage{
+	margin-top: 60px;
+	width: 100%;
+}
+#col1{
+	width: 30%;
+	float:left;
+}
+#col2{
+	width: 40%;
+	float:left;
+}
+#col3{
+	width: 30%;
+	float:right;
+	
+}
+button #btnmaroon{
+	border: 2px;
+    padding: 10px 40px; 
+    border-radius: 25px;	
+	margin-top: 25px;
+	width:240px;
+	height: 60px;
+
+}
+div #selectdiv{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#labeldiv{
+	float: left;
+	margin-bottom: 8px;
+}
+#rowdiv{
+	margin-top: 10;
+}
+#headerbar{
+	background:#8a6de9;
+}

@@ -1,0 +1,10 @@
+[
+	{
+		"CityID" : "1",
+		"CityName" : "Mumbai"
+	}, 
+	{
+		"CityID" : "2",
+		"CityName" : "Pune"
+	}
+]
