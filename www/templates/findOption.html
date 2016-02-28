@@ -32,7 +32,7 @@
 				    <div class="input-label">
 				      City
 				    </div>
-				    <select  style="width: 100%;"  ng-model="frm.CityName">
+				    <select  style="width: 100%;"  ng-model="frm.CityName" required>
 						<option  ng-repeat="x in city|orderBy:'CityName'" value="{{ x.CityName }}">
 		                          {{ x.CityName }}
 		                </option>

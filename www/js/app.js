@@ -41,7 +41,7 @@ angular.module('InternKatta', ['ionic','firebase'])
       controller:'InternshiplistController'
     })
     .state('findinternship',{
-      url:'/findinternship/:InternshipID',
+      url:'/findinternship/:InternshipID/:DevID',
       templateUrl:'templates/internship.html',
       controller:'ViewInternshipController'
     })
@@ -129,7 +129,22 @@ angular.module('InternKatta', ['ionic','firebase'])
         })
         // Save the csv to your db (replace alert with your code)
         alert($param.CityName+' '+$param.FunctionalArea+' '+optionsCSV);
-        $state.go('internshiplist');
+        
+        window.localStorage['InternshipOptionCity'] = $param.CityName;
+        window.localStorage['InternshipOptionFunctionArea'] = $param.FunctionalArea;
+        window.localStorage['InternshipOptionCategory'] = optionsCSV;
+        
+        if($param.CityName == null || $param.FunctionalArea == null || optionsCSV=="")
+        {
+            alert("Please Select Inputs For the Result");
+        }
+        else
+        {
+
+            $state.go('internshiplist');
+        }
+        
+        
             /*var request = $http({
                 method: "post",
                 url: "php/findIntern.php",
@@ -158,13 +173,28 @@ angular.module('InternKatta', ['ionic','firebase'])
 
 .controller('InternshiplistController',['$scope','$ionicSideMenuDelegate','$firebaseArray',function($scope, $ionicSideMenuDelegate,$firebaseArray) {
         console.log("Home Controller");
-var city = "1";
+
     var ref = new Firebase("https://devintern.firebaseio.com/internships");
+
+
+    var City = window.localStorage['InternshipOptionCity'];
+    //console.log(city);
+    var FArea = window.localStorage['InternshipOptionFunctionArea'];
+    var Category = window.localStorage['InternshipOptionCategory'];
+
+
+    //$scope.InternshipList = $firebaseArray(ref);
     
-    $scope.InternshipList = $firebaseArray(ref);
-    //$scope.InternshipList = $firebaseArray(ref.orderByChild('CityID').equalTo(city) && ref.orderByChild('CategoryID').equalTo(city));
+
 
     
+    
+
+    //$scope.InternshipList = $firebaseArray(ref);
+    //$scope.InternshipList = $firebaseArray(ref.orderByChild('CityID').equalTo(city));
+    $scope.InternshipList = $firebaseArray(ref.orderByChild('CityID').equalTo(City) && ref.orderByChild('FunctionAreaID').equalTo(FArea) && ref.orderByChild('CategoryID').equalTo(Category));
+
+    $scope.city = window.localStorage['InternshipOptions'];
     console.log($scope.InternshipList);
     console.log($firebaseArray(ref).length);
     
@@ -209,7 +239,8 @@ var city = "1";
     document.getElementById('spin').style.display = "block";
   }
 //alert('hi view '+$stateParams.InternshipID);
-  console.log($stateParams.ID);
+  console.log($stateParams.InternshipID);
+    console.log($stateParams.DevID);
     
     $scope.getID = $stateParams.InternshipID ;
     var ref = new Firebase("https://devintern.firebaseio.com/internships/"+$scope.getID);
